@@ -1,0 +1,61 @@
+body {
+  font-family: 'Raleway', sans-serif;
+
+  .loader {
+    background: url(../assets/puff.svg) no-repeat center center;
+    background-size: 100px;
+    height: 200px;
+    width: 100%;
+  }
+
+  .jumbotron {
+    background: url(../assets/background.png) no-repeat center top;
+    background-size: cover;
+  }
+
+  .tvshows-wrapper {
+    margin-top: 40px;
+    .genres-wrapper {
+      .genres-list {
+        margin-bottom: 40px;
+        min-height: 400px;
+        padding-bottom: 10px;
+        transition: min-height 1s;
+        background: #583800; /* Old browsers */
+        background: linear-gradient(to right, #583800 0%, #9c7019 100%);
+        h3 {
+          padding: 10px 20px;
+        }
+        .form-check {
+          padding-left: 0;
+          input {
+            &[type="radio"] {
+              display: none;
+              &:checked + label {
+                background: #303030;
+                //color: #303030;
+                font-weight: bold;
+                padding: 10px 20px;
+              }
+            }
+          }
+          label {
+            cursor: pointer;
+            padding: 5px 20px;
+            transition: padding 0.3s;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .shows-wrapper {
+      h5 {
+        padding-top: 30px;
+      }
+      .card {
+        display: none;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

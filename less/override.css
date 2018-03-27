@@ -1,0 +1,53 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+body .loader {
+  background: url(../assets/puff.svg) no-repeat center center;
+  background-size: 100px;
+  height: 200px;
+  width: 100%;
+}
+body .jumbotron {
+  background: url(../assets/background.png) no-repeat center top;
+  background-size: cover;
+}
+body .tvshows-wrapper {
+  margin-top: 40px;
+}
+body .tvshows-wrapper .genres-wrapper .genres-list {
+  margin-bottom: 40px;
+  min-height: 400px;
+  padding-bottom: 10px;
+  transition: min-height 1s;
+  background: #583800;
+  /* Old browsers */
+  background: linear-gradient(to right, #583800 0%, #9c7019 100%);
+}
+body .tvshows-wrapper .genres-wrapper .genres-list h3 {
+  padding: 10px 20px;
+}
+body .tvshows-wrapper .genres-wrapper .genres-list .form-check {
+  padding-left: 0;
+}
+body .tvshows-wrapper .genres-wrapper .genres-list .form-check input[type="radio"] {
+  display: none;
+}
+body .tvshows-wrapper .genres-wrapper .genres-list .form-check input[type="radio"]:checked + label {
+  background: #303030;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+body .tvshows-wrapper .genres-wrapper .genres-list .form-check label {
+  cursor: pointer;
+  padding: 5px 20px;
+  transition: padding 0.3s;
+  width: 100%;
+}
+body .tvshows-wrapper .shows-wrapper h5 {
+  padding-top: 30px;
+}
+body .tvshows-wrapper .shows-wrapper .card {
+  display: none;
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=override.css.map */

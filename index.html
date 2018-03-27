@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Ashil Patel | TV Shows</title>
+
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="css/override.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootswatch.darkly.min.css">
+    <link rel="stylesheet" href="less/override.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">TV Shows</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading display-3">Top 20 TV Shows</h1>
+            <p class="text-muted">powered by The Movie Database API</p>
+        </div>
+    </section>
+
+    <div class="tvshows-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="genres-wrapper col-md-3">
+                    <div class="genres-list">
+                        <h3>Genres</h3>
+                        <div class="loader"></div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="shows-wrapper row">
+                        <h5 class="h1 col-md-12">Select a genre from the left to reveal the 20 most popular TV Shows <small class="text-muted">since 2010</small></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/TVShows.js"></script>
+</body>
+</html>

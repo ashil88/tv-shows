@@ -1,0 +1,49 @@
+.jumbotron {
+  margin-bottom: 0;
+}
+.form-wrapper {
+  margin-bottom: 30px;
+}
+.form-wrapper form {
+  position: relative;
+}
+.form-wrapper form .form-group {
+  padding: 2rem 0;
+}
+.form-wrapper form .form-group input {
+  background: transparent;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  color: #f1f1f1;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+.form-wrapper form .form-group input::-webkit-input-placeholder {
+  color: #ced4da;
+}
+.form-wrapper form button {
+  background: 0 none;
+  border: 0 none;
+  color: #ced4da;
+  cursor: pointer;
+  font-size: 35px;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 55px;
+}
+.venues-wrapper .card {
+  margin-bottom: 30px;
+}
+.venues-wrapper .card .card-header {
+  background-position: right .75rem top .55rem;
+  background-repeat: no-repeat;
+  padding-right: 3rem;
+}
+.venues-wrapper .card .card-body .blockquote {
+  font-size: 1rem;
+  font-style: italic;
+}
