@@ -10,7 +10,7 @@ class TVShows {
     private genresWrapper: JQuery;
     private resultsWrapper: JQuery;
     readonly loadingDiv: HTMLDivElement;
-    private errorHTML: string;
+    readonly errorHTML: string;
 
     constructor(tvShowsWrapper: JQuery) {
         this.apiGenresParameters = {'api_key': '5b6acf84a03c3efafc9d4bee9c3ab035', 'language': 'en-US'};
@@ -28,7 +28,7 @@ class TVShows {
         tvShowsWrapper.on('change', '.form-check-input', (e) => {
             e.preventDefault();
             this.onFilterChange($(e.currentTarget));
-        })
+        });
 
         tvShowsWrapper.on('click', '.more-info', (e) => {
             e.preventDefault();
