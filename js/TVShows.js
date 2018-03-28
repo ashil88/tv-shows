@@ -9,12 +9,17 @@ class TVShows {
         this.resultsWrapper = tvShowsWrapper.find('.shows-wrapper');
         this.loadingDiv = document.createElement('div');
         this.loadingDiv.className = 'loader';
+        this.errorHTML = `<p class="text-danger h3">Oops! Looks like there's been an error. Please try again later.</p>`;
         // on load, make request for genres
         this.callTvResource(URL_TV_GENRES, this.apiGenresParameters, this.genresResourceSuccess);
         // on filter(genre) change
         tvShowsWrapper.on('change', '.form-check-input', (e) => {
             e.preventDefault();
             this.onFilterChange($(e.currentTarget));
+        });
+        tvShowsWrapper.on('click', '.more-info', (e) => {
+            e.preventDefault();
+            alert('Link to details page: ' + $(e.currentTarget).attr('href'));
         });
     }
     callTvResource(url, params, successCallback, beforeCallback) {
@@ -28,6 +33,7 @@ class TVShows {
             context: this,
             beforeSend: beforeCallback,
             success: successCallback,
+            error: this.tvResourceError
         });
     }
     // generate markup for genres list
@@ -58,13 +64,14 @@ class TVShows {
     showsResourceSuccess(data) {
         let { results: shows } = data, showsMarkup = ``;
         shows.forEach((show) => {
+            let imagePath = show.backdrop_path ? `https://image.tmdb.org/t/p/w300${show.backdrop_path}` : `https://placehold.it/300x169`;
             showsMarkup += `<div class="col-md-4">
     <div class="card">
         <div class="card-header">${show.name}</div>
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300${show.backdrop_path}" alt="Image of ${show.name}">
+        <img class="card-img-top" src="${imagePath}" alt="Image of ${show.name}">
         <div class="card-body">
-            <p class="card-text small">${show.overview.substring(0, 99)}</p>
-            <a href="/show/${show.id}" class="btn btn-outline-warning btn-sm">More info</a>
+            <p class="card-text small">${show.overview.substring(0, 99) + '...'}</p>
+            <a href="/show/${show.id}" class="btn btn-outline-warning btn-sm more-info">More info</a>
         </div>
     </div>
 </div>`;
@@ -75,6 +82,12 @@ class TVShows {
             $('.card').each((i, elem) => {
                 $(elem).delay(100 * i).fadeIn('fast');
             });
+        }, 1000);
+    }
+    tvResourceError(data, textStatus) {
+        setTimeout(() => {
+            this.resultsWrapper.find('.loader').remove();
+            this.resultsWrapper.append(this.errorHTML);
         }, 1000);
     }
 }
